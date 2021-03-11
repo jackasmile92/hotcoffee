@@ -224,7 +224,7 @@ body {
 .article__bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .article__date {
@@ -238,6 +238,13 @@ body {
     font-size: 12px;
     line-height: 15px;
     color: #2D3748;
+    transition: .5s;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+}
+
+.article__more:hover{
+    border-bottom: 1px solid #2D3748;
 }
 
 .article--wide {
@@ -283,6 +290,14 @@ body {
 .article--highlight .article__more {
     font-size: 16px;
     line-height: 19px;
+}
+
+.article--highlight .article__more, .article--highlight .article__header{
+    color: #000;
+}
+
+.article--highlight  .article__more:hover{
+    border-bottom: 1px solid #000000;
 }
 
 .highlight__btn-wrap {
