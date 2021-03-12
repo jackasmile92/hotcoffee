@@ -124,6 +124,14 @@ body {
     justify-content: center;
 }
 
+.menu__btn {
+    display: none;
+}
+
+.header__menu .header__search {
+    display: none;
+}
+
 /*top*/
 .top {
     padding-top: 70px;
@@ -243,7 +251,7 @@ body {
     border-bottom: 1px solid transparent;
 }
 
-.article__more:hover{
+.article__more:hover {
     border-bottom: 1px solid #2D3748;
 }
 
@@ -292,11 +300,12 @@ body {
     line-height: 19px;
 }
 
-.article--highlight .article__more, .article--highlight .article__header{
+.article--highlight .article__more,
+.article--highlight .article__header {
     color: #000;
 }
 
-.article--highlight  .article__more:hover{
+.article--highlight .article__more:hover {
     border-bottom: 1px solid #000000;
 }
 
@@ -351,4 +360,86 @@ body {
 
 .footer__text--bold {
     font-weight: bold;
+}
+
+@media(max-width: 1000px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .menu__btn {
+        display: block;
+        width: 35px;
+        height: 24px;
+        border: none;
+        cursor: pointer;
+        border-top: 4px solid #000;
+        border-bottom: 4px solid #000;
+        background-color: transparent;
+        position: relative;
+        order: 1;
+
+    }
+
+    .menu__btn::before {
+        content: '';
+        position: absolute;
+        width: 35px;
+        height: 4px;
+        background-color: #000;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .header__menu {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color: #FBFBFB;
+        right: 0;
+        text-align: center;
+        padding: 20px 0;
+        transform: translateY(-500px);
+        transition: all 1s;
+        z-index: 1;
+        box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
+    }
+
+    .header__menu--active {
+        transform: translateY(0);
+    }
+
+    .header__social {
+        margin-left: 0;
+        padding: 20px;
+        border-top: 1px solid #000;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 550px) {
+    .header__search--main {
+        display: none;
+    }
+
+    .header__menu .header__search {
+        display: block;
+        padding: 20px;
+
+    }
+
+    .header__search-input {
+        background-color: #FBFBFB;
+        width: 40%;
+    }
+}
+
+@media(max-width: 550px) {
+    .container {
+        padding: 0 20px;
+    }
 }
